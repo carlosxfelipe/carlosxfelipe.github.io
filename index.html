@@ -7,23 +7,42 @@
 </head>
 <body>
     <h1>Realizando lucro/prejuízo com a venda de FIIs</h1>
+    <label for="fname">Qual seu Preço Médio do FII?</label>
+    <input type="text" id="precoMedio" name="fname"><br><br>
+    <label for="fname">Quantas cotas você tem?</label>
+    <input type="text" id="quantidadeDeCotas" name="fname"><br><br>
+    <label for="fname">Qual valor da cota no momento da venda?</label>
+    <input type="text" id="valorDeVenda" name="fname"><br><br>
     <button onclick="venda()">Realizar os cálculos</button>
     <section id="res">
         <p>O resultado vem aqui...</p>
     </section>
     <script>
+        function calcularLucro() {
+
+        }
         function venda() {
-            let precoMedio = Number(window.prompt('Qual seu Preço Médio do FII?: '))
-            let quantidadeDeCotas = Number(window.prompt('Quantas cotas você tem? '))
-            let valorDeVenda = Number(window.prompt('Qual valor da cota no momento da venda?'))
-            vinte = (valorDeVenda - precoMedio) * 0.2
-            darf = vinte * quantidadeDeCotas 
+            // let precoMedio = Number(window.prompt('Qual seu Preço Médio do FII?: '))
+            // let quantidadeDeCotas = Number(window.prompt('Quantas cotas você tem? '))
+            // let valorDeVenda = Number(window.prompt('Qual valor da cota no momento da venda?'))
+            let precoMedio = document.getElementById('precoMedio').value
+            let quantidadeDeCotas = document.getElementById('quantidadeDeCotas').value
+            let valorDeVenda = document.getElementById('valorDeVenda').value
+            imposto = (valorDeVenda - precoMedio) * 0.2
+            darf = imposto * quantidadeDeCotas 
             lucro = ((valorDeVenda - precoMedio) * quantidadeDeCotas) - darf
 
             let res = document.querySelector('section#res')
-            res.innerHTML = `<p>Seu lucro na operação foi de R$${lucro} e você precisará emitir uma DARF no valor de R$${darf} até o último dia útil do mês seguinte à liquidação da operação que gerou o ganho.</p>`
-            
+
+            if (darf > 0 && darf <= 10) {
+                res.innerHTML = `<p>Seu lucro na operação foi de R$${lucro.toFixed(2)} e você por enquanto não precisa emitir uma DARF no valor de R$ ${darf.toFixed(2)}, mas precisa contabilizar esse valor com outras vendas futuras.</p>`
+            } else if (darf > 10) {
+                res.innerHTML = `<p>Seu lucro na operação foi de R$${lucro.toFixed(2)} e você precisará emitir uma DARF no valor de R$${darf.toFixed(2)} até o último dia útil do mês seguinte à liquidação da operação que gerou o ganho.</p>`
+            } else {
+                res.innerHTML = `<p>Seu prejuízo na operação foi de R$${lucro.toFixed(2)} e você poderá contabilizar esse prejuízo com outras vendas futuras para compensação.</p>`
+            }
         }
     </script>
+    <p><code>desenvolvido por carlos felipe araújo @carlosxfelipe</code></p>
 </body>
 </html>

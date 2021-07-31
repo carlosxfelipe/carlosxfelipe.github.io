@@ -36,9 +36,9 @@ valorDeVenda = float(input('Qual valor da cota no momento da venda? '))
 imposto = (valorDeVenda - precoMedio) * 0.2
 darf = imposto * quantidadeDeCotas 
 lucro = ((valorDeVenda - precoMedio) * quantidadeDeCotas) - darf
-if lucro >= 0.1:
+if lucro > 0:
     if darf > 10:
-        print('Seu lucro na operação foi de R${:.2f} e você precisará emitir uma DARF no valor de R${:.2f} até o último dia útil de {} à liquidação da operação que gerou o ganho.'.format(lucro, darf, pegar_mes(proximoMes)))
+        print('Seu lucro na operação foi de R${:.2f} e você precisará emitir uma DARF no valor de R${:.2f} até o último dia útil de {}.'.format(lucro, darf, pegar_mes(proximoMes)))
     else:
         print('Seu lucro na operação foi de R${:.2f} e você por enquanto não precisa emitir uma DARF no valor de R${:.2f}, mas precisa contabilizar esse valor com outras vendas futuras.'.format(lucro, darf))
 else:
