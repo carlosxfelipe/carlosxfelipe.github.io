@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundos Imobiliários</title>
+</head>
+<body>
+    <h1>Realizando lucro/prejuízo com a venda de FIIs</h1>
+    <button onclick="venda()">Realizar os cálculos</button>
+    <section id="res">
+        <p>O resultado vem aqui...</p>
+    </section>
+    <script>
+        function venda() {
+            let precoMedio = Number(window.prompt('Qual seu Preço Médio do FII?: '))
+            let quantidadeDeCotas = Number(window.prompt('Quantas cotas você tem? '))
+            let valorDeVenda = Number(window.prompt('Qual valor da cota no momento da venda?'))
+            vinte = (valorDeVenda - precoMedio) * 0.2
+            darf = vinte * quantidadeDeCotas 
+            lucro = ((valorDeVenda - precoMedio) * quantidadeDeCotas) - darf
+
+            let res = document.querySelector('section#res')
+            res.innerHTML = `<p>Seu lucro na operação foi de R$${lucro} e você precisará emitir uma DARF no valor de R$${darf} até o último dia útil do mês seguinte à liquidação da operação que gerou o ganho.</p>`
+            
+        }
+    </script>
+</body>
+</html>
