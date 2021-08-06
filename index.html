@@ -7,18 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-    <h1>Realizando lucro/prejuízo com a venda de FIIs</h1>
-    <label for="fname">Qual seu Preço Médio do FII?</label>
-    <input type="text" id="precoMedio" name="fname"><br><br>
-    <label for="fname">Quantas cotas você tem?</label>
-    <input type="text" id="quantidadeDeCotas" name="fname"><br><br>
-    <label for="fname">Qual valor da cota no momento da venda?</label>
-    <input type="text" id="valorDeVenda" name="fname"><br><br>
-    <button class="button" onclick="venda()">Realizar os cálculos</button>
-    <section id="res">
-        <p>O resultado vem aqui...</p>
-    </section>
+    <div class="content">
+        <h1>Realizando lucro/prejuízo com a venda de FIIs</h1>
+        <div class="inputs">
+            <label for="fname">Qual seu Preço Médio do FII?</label>
+            <input type="text" id="precoMedio" name="fname">
+            <label for="fname">Quantas cotas você tem?</label>
+            <input type="text" id="quantidadeDeCotas" name="fname">
+            <label for="fname">Qual valor da cota no momento da venda?</label>
+            <input type="text" id="valorDeVenda" name="fname">
+        </div>
+        <button class="button" onclick="venda()">Realizar os cálculos</button>
+        <section id="res">
+            <p>O resultado vem aqui...</p>
+        </section>
     </div>
     <p class="python"><code><a href="fundosimobiliarios.py">Baixar programa escrito na linguagem de programação Python</a></code></p>
     <footer><code>desenvolvido por carlos felipe araújo @carlosxfelipe</code></footer>
