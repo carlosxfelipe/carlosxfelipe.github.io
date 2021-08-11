@@ -81,7 +81,7 @@ header {
     margin: 16px 0;
 }
 
-.rodape {
+.python {
     background-color: #fef5d8;
     border-radius: 10px;
     padding: 15px;
@@ -101,6 +101,7 @@ footer {
     color: white;
     font-size: smaller;
     text-align: left;
+    width: 100%;
 }
 
 #res {
