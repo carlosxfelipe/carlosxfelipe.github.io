@@ -10,19 +10,10 @@
     text-decoration: none;
 }
 
-.rodape a {
-    color: black;
-}
-
-.redessociais a {
-    color: white;
-}
-
 body {
     background-image: url(background.jpg);
     font: normal 15pt Arial;
     text-align: center;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,6 +43,9 @@ input {
 
 header {
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .content {
@@ -114,6 +108,14 @@ footer {
     text-align: center;
     padding: 0em 0em 0em;
     width: 100%;
+}
+
+.python a {
+    color: black;
+}
+
+.redessociais a {
+    color: white;
 }
 
 ul { 
