@@ -93,15 +93,32 @@ header {
     margin-bottom: 16px;
 }
 
-footer {
-    background-color: #9b133b;
-    border-radius: 10px;
+header {
+    background-color: #181c3c;
     padding: 15px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.315);
     color: white;
     font-size: smaller;
-    text-align: left;
+    text-align: center;
+    padding: 0em 0em 0em;
     width: 100%;
+    height: 100px;
+}
+
+footer {
+    background-color: #9b133b;
+    padding: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.315);
+    color: white;
+    font-size: smaller;
+    text-align: center;
+    padding: 0em 0em 0em;
+    width: 100%;
+}
+
+ul { 
+    display: inline-block;
+    text-align: left;
 }
 
 #res {
