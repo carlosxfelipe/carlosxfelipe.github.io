@@ -4,29 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Calculadora Fundos Imobiliários</title>
+    <title>Cálculos para Fundos Imobiliários</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <header>
-    <h1>Realizando lucro/prejuízo com a venda de FIIs</h1>
+    <h1>Cálculos para Fundos Imobiliários</h1>
     <img src="header.png" alt="predios">
 </header>
 <body>
     <div class="content">
-        <div class="inputs">
-            <label for="fname">Qual seu Preço Médio do FII?</label>
-            <input type="text" id="precoMedio" name="fname">
-            <label for="fname">Quantas cotas você tem?</label>
-            <input type="text" id="quantidadeDeCotas" name="fname">
-            <label for="fname">Qual valor da cota no momento da venda?</label>
-            <input type="text" id="valorDeVenda" name="fname">
+        <div class="corpo">
+            <div class="inputs">
+                <strong><p class="subtitle">Realizando lucro/prejuízo com a venda de FIIs</p></strong>
+                <label for="fname">Qual seu Preço Médio do FII?</label>
+                <input type="text" id="precoMedio" name="fname">
+                <label for="fname">Quantas cotas você tem?</label>
+                <input type="text" id="quantidadeDeCotas" name="fname">
+                <label for="fname">Qual valor da cota no momento da venda?</label>
+                <input type="text" id="valorDeVenda" name="fname">
+            </div>
+            <button class="button" onclick="venda()">Realizar os cálculos</button>
+            <section id="res">
+                <p>O resultado vem aqui...</p>
+            </section>
         </div>
-        <button class="button" onclick="venda()">Realizar os cálculos</button>
-        <section id="res">
-            <p>O resultado vem aqui...</p>
-        </section>
-    </div>
-    <p class="python"><code><img src="imagens/python.png" alt="Python" width="20" height="20"><a href="fundosimobiliarios.py">Baixar programa escrito na linguagem de programação Python</a></code></p>
+        <p class="python"><code><img src="imagens/python.png" alt="Python" width="20" height="20"><a href="fundosimobiliarios.py">Baixar programa escrito na linguagem de programação Python</a></code></p>
+        </div>
     <footer><code>
         <ul class="redessociais">
             <li><img src="imagens/github.png" alt="GitHub"><a href="https://github.com/carlosxfelipe" target=”_blank”>Acessa meu repositório público no GitHub</a></li>

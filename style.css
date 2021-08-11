@@ -30,6 +30,16 @@ input {
     font-size: 22px;
 }
 
+.corpo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.subtitle {
+    margin-bottom: 14px;
+}
+
 .inputs {
     display: flex;
     flex-direction: column;
@@ -56,10 +66,6 @@ header {
     display: flex;
     flex-direction: column;
     max-width: 780px;
-}
-
-.content h1 {
-    margin: 16px 0;
 }
 
 .button {
