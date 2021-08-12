@@ -30,6 +30,9 @@ def pegar_mes(mes):
     else:
         return '???'
 
+print('-=-' * 20)
+print('Realizando lucro/prejuízo com a venda de FIIs')
+print('-=-' * 20)
 precoMedio = float(input('Qual seu Preço Médio do FII? '))
 quantidadeDeCotas = int(input('Quantas cotas você tem? '))
 valorDeVenda = float(input('Qual valor da cota no momento da venda? '))
