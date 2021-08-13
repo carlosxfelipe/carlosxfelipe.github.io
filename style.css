@@ -1,150 +1,117 @@
-@font-face {
-    font-family: klavika;
-    src: url(klavika.otf);
-}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 * {
-    padding: 0;
-    margin: 0;
-    font-family: klavika;
-    text-decoration: none;
-}
-
-html {
-    height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-image: url(background.jpg);
-    font: normal 15pt Arial;
-    height: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #222;
+  padding-bottom: 50px;
 }
 
-input {
-    height: 46px;
-    border-radius: 16px;
-    margin-bottom: 16px;
-    border: 1px solid #26629d;
-    outline: none;
-    padding-left: 12px;
-    font-size: 22px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.corpo {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+.nav {
+  position: fixed;
+  background-color: #222;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
 }
 
-.subtitle {
-    margin-bottom: 14px;
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  transition: all 0.3s ease-in-out;
 }
 
-.inputs {
-    display: flex;
-    flex-direction: column;
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
 }
 
-.inputs label {
-    align-self: start;
-    margin-bottom: 4px;
-    margin-left: 4px;
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 7px 15px;
+  transition: all 0.3s ease-in-out;
 }
 
-header {
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.nav.active {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.content {
-    background-color: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.315);
-    display: flex;
-    flex-direction: column;
-    max-width: 780px;
-    flex: 1;
-    margin: 32px 0;
+.nav.active a {
+  color: #000;
 }
 
-.button {
-    height: 54px;
-    border-radius: 16px;
-    border: none;
-    background-color: #26629d;
-    color: white;
-    padding: 16px;
-    letter-spacing: 0.1rem;
-    font-weight: bold;
-    font-size: 20px;
-    margin: 16px 0;
+.nav.active .container {
+  padding: 10px 0;
 }
 
-.python {
-    background-color: #fef5d8;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.315);
-    color: white;
-    font-size: smaller;
-    text-align: center;
-    margin-top: 16px;
-    margin-bottom: 16px;
+.nav a.current,
+.nav a:hover {
+  color: #c0392b;
+  font-weight: bold;
 }
 
-header {
-    background-color: #181c3c;
-    padding: 15px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.315);
-    color: white;
-    font-size: smaller;
-    text-align: center;
-    padding: 0em 0em 0em;
-    width: 100%;
-    height: 100px;
+.hero {
+  background-image: url('imagens/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  z-index: -2;
 }
 
-footer {
-    background-color: #9b133b;
-    padding: 15px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.315);
-    color: white;
-    font-size: smaller;
-    text-align: center;
-    padding: 16px;
-    width: 100%;
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
-.python a {
-    color: black;
+.hero h1 {
+  font-size: 46px;
+  margin: -20px 0 20px;
 }
 
-.redessociais a {
-    color: white;
-    font-size: 20px;
+.hero p {
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
-.redessociais { 
-    display: inline-block;
-    text-align: left;
-    list-style: none;
+.content h2,
+.content h3 {
+  font-size: 150%;
+  margin: 20px 0;
 }
 
-#res {
-    margin: 16px 0;
-    background-color: #eee;
-    padding: 24px;
-    border-radius: 16px;
-}
-
-#res p {
-    overflow-wrap: break-word;
+.content p {
+  color: #555;
+  line-height: 30px;
+  letter-spacing: 1.2px;
 }
