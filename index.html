@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Carlos Felipe Araújo</title>
+    <title>Cálculos para Fundos Imobiliários</title>
   </head>
   <body>
     <nav class="nav">
       <div class="container">
-        <h1 class="logo"><a href="#">Carlos</a></h1>
+        <img src="imagens/3d-buildings.png" alt="3d-buildings" width="32"> <!--"Icon made by Pixel perfect from www.flaticon.com"-->
+        <!--<h1 class="logo"><a href="/index.html">My Website</a></h1>-->
         <ul>
-          <li><a href="./index.html" class="current">Home</a></li>
-          <li><a href="https://github.com/carlosxfelipe">GitHub</a></li>
-          <li><a href="https://www.instagram.com/carlosfelipeadv/">Instagram</a></li>
-          <li><a href="mailto:carlosxfelipe@gmail.com?">E-mail</a></li>
+          <li><a href="./index.html" class="current">Início</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="https://www.instagram.com/carlosfelipeadv/" target="_blank">Contato</a></li>
         </ul>
       </div>
     </nav>
@@ -22,13 +23,14 @@
     <div class="hero">
       <div class="container">
         <h1>Cálculos para Fundos Imobiliários</h1>
-        <p>console.log('Sou formado em Letras e em Direito, programador em formação e investidor apaixonado por Fundos Imobiliários.')</p>
+        <p>Exercícios que fiz para praticar meus conhecimentos em programação.</p>
       </div>
     </div>
 
     <section class="container content">
-      <p><code>Por gentileza, usar ponto em vez de vírgula.</p></code> 
-      <h2>Realizando lucro/prejuízo com a venda de FIIs</h2>
+      <p><code>Por gentileza, usar ponto em vez de vírgula.</p></code>
+
+      <div class="darf"><h2>Realizando lucro/prejuízo com a venda de FIIs</h2>
     <label for="fname">Qual seu Preço Médio do FII?</label>
     <input type="text" id="precoMedio" name="fname"><br><br>
     <label for="fname">Quantas cotas você tem?</label>
@@ -38,23 +40,22 @@
     <button onclick="resultado()">Realizar os cálculos</button>
     <section id="res">
         <p>O resultado vem aqui...</p>
-    </section>
-
-      <h3>Calculando Yield on Cost (YOC) de FIIs</h3>
+    </section></div>
+      
+      <div class="yoc"><h3>Calculando Yield on Cost (YOC) de FIIs</h3>
       <label for="fname">Qual seu custo médio de aquisição?</label>
     <input type="text" id="cmaquisicao" name="fname"><br><br>
     <label for="fname">Quanto rendeu no último mês?</label>
     <input type="text" id="rendimento" name="fname"><br><br>
     <button onclick="resultado2()">Realizar os cálculos</button>
-    <p>Lembre-se de que FII é renda variável e, portanto, a renda varia.</p>
     <section id="res2">
         <p>O resultado vem aqui...</p>
     </section>
     <section id="res3">
+    </section></div>
+    <p>Lembre-se de que FII é renda variável e, portanto, a renda varia.</p>
     </section>
-
-    </section>
-
+    
     <script src="script.js"></script>
   </body>
 </html>

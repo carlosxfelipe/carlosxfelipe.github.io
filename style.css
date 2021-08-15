@@ -115,3 +115,23 @@ body {
   line-height: 30px;
   letter-spacing: 1.2px;
 }
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: large;
+}
+
+button {
+  background-color: #e7e7e7;
+  border: none;
+  border-radius: 12px;
+  color: black;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
