@@ -1,11 +1,14 @@
 const nav = document.querySelector('.nav')
+const logo = document.querySelector('.logo')
 window.addEventListener('scroll', fixNav)
 
 function fixNav() {
     if(window.scrollY > nav.offsetHeight + 150) {
         nav.classList.add('active')
+        logo.setAttribute('src', 'imagens/3d-buildings-black.png')
     } else {
         nav.classList.remove('active')
+        logo.setAttribute('src', 'imagens/3d-buildings.png')
     }
 }
 
@@ -16,9 +19,9 @@ function calcularLucro() {
 }
 
 function resultado() {
-    let precoMedio = document.getElementById('precoMedio').value
-    let quantidadeDeCotas = document.getElementById('quantidadeDeCotas').value
-    let valorDeVenda = document.getElementById('valorDeVenda').value
+    let precoMedio = (document.getElementById('precoMedio').value).replace(/,/g, '.')
+    let quantidadeDeCotas = (document.getElementById('quantidadeDeCotas').value).replace(/,/g, '.')
+    let valorDeVenda = (document.getElementById('valorDeVenda').value).replace(/,/g, '.')
     imposto = (valorDeVenda - precoMedio) * 0.2
     darf = imposto * quantidadeDeCotas 
     lucro = ((valorDeVenda - precoMedio) * quantidadeDeCotas) - darf
@@ -42,9 +45,9 @@ function calcularYOC() {
 }
 
 function resultado2() {
-    let cmaquisicao = document.getElementById('cmaquisicao').value
+    let cmaquisicao = (document.getElementById('cmaquisicao').value).replace(/,/g, '.')
     cmaquisicao * 100
-    let rendimento = document.getElementById('rendimento').value
+    let rendimento = (document.getElementById('rendimento').value).replace(/,/g, '.')
     rendimento * 12
     let yocost = rendimento / cmaquisicao * 100
 

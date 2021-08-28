@@ -15,6 +15,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 50px;
 }
 
 .nav {
@@ -24,6 +25,7 @@ body {
   left: 0;
   right: 0;
   transition: all 0.3s ease-in-out;
+  padding: 0 50px;
 }
 
 .nav .container {
