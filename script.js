@@ -20,7 +20,7 @@ function calcularLucro() {
 
 function resultado() {
     let precoMedio = (document.getElementById('precoMedio').value).replace(/,/g, '.')
-    let quantidadeDeCotas = (document.getElementById('quantidadeDeCotas').value).replace(/,/g, '.')
+    let quantidadeDeCotas = document.getElementById('quantidadeDeCotas').value
     let valorDeVenda = (document.getElementById('valorDeVenda').value).replace(/,/g, '.')
     imposto = (valorDeVenda - precoMedio) * 0.2
     darf = imposto * quantidadeDeCotas 
