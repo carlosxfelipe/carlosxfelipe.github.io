@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #222;
   padding-bottom: 50px;
 }
@@ -70,7 +70,7 @@ body {
 }
 
 .hero {
-  background-image: url('imagens/background.jpg');
+  background-image: url("imagens/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
@@ -86,7 +86,7 @@ body {
 }
 
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
