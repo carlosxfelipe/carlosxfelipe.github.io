@@ -1,15 +1,16 @@
 function calcularDarf() {
-  let precoMedio = document
+  const precoMedio = document
     .getElementById("precoMedio")
     .value.replace(/,/g, ".");
-  let quantidadeDeCotas = document.getElementById("quantidadeDeCotas").value;
-  let valorDeVenda = document
+  const quantidadeDeCotas = document.getElementById("quantidadeDeCotas").value;
+  const valorDeVenda = document
     .getElementById("valorDeVenda")
     .value.replace(/,/g, ".");
-  imposto = (valorDeVenda - precoMedio) * 0.2;
-  darf = imposto * quantidadeDeCotas;
-  lucro = (valorDeVenda - precoMedio) * quantidadeDeCotas - darf;
-  prejuizo = (valorDeVenda - precoMedio) * quantidadeDeCotas * -1;
+
+  let imposto = (valorDeVenda - precoMedio) * 0.2;
+  let darf = imposto * quantidadeDeCotas;
+  let lucro = (valorDeVenda - precoMedio) * quantidadeDeCotas - darf;
+  let prejuizo = (valorDeVenda - precoMedio) * quantidadeDeCotas * -1;
 
   let resultadoVenda = document.querySelector("section#resultadoVenda");
 

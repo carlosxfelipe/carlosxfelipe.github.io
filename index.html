@@ -4,13 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fundos Imobiliários</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   </head>
   <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <a class="navbar-brand" href="index.html">
+        <!-- <img
+          src="/docs/4.1/assets/brand/bootstrap-solid.svg"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt=""
+        /> -->
+        Fundos Imobiliários
+      </a>
+    </nav>
+
     <div class="container">
-      <div class="header">
+      <!-- <div class="header">
         <h1>Fundos Imobiliários</h1>
-      </div>
+      </div> -->
 
       <div class="content">
         <div class="calculardarfparafiis">
@@ -19,27 +33,30 @@
             <label>Qual seu Preço Médio do FII?</label>
           </p>
           <p>
-            <input type="text" id="precoMedio" />
+            <input type="text" class="form-control" id="precoMedio" />
           </p>
           <p>
             <label>Quantas cotas você vendeu?</label>
           </p>
           <p>
-            <input type="text" id="quantidadeDeCotas" />
+            <input type="text" class="form-control" id="quantidadeDeCotas" />
           </p>
           <p>
             <label>Qual valor da cota no momento da venda?</label>
           </p>
           <p>
-            <input type="text" id="valorDeVenda" />
+            <input type="text" class="form-control" id="valorDeVenda" />
           </p>
           <button class="btn btn-primary" onclick="calcularDarf()">
             Realizar os cálculos
           </button>
-          <section id="resultadoVenda">
+          <button class="btn btn-danger" onclick="limparDarf()">Limpar</button>
+          <section class="alert alert-primary" role="alert" id="resultadoVenda">
             <p>Seu lucro líquido na operação foi de ...</p>
           </section>
         </div>
+
+        <hr />
 
         <div class="yieldoncost">
           <h2>Cálculo do Yield on Cost (YOC)</h2>
@@ -47,21 +64,24 @@
             <label>Qual seu custo médio de aquisição?</label>
           </p>
           <p>
-            <input type="text" id="precoAquisicao" />
+            <input type="text" class="form-control" id="precoAquisicao" />
           </p>
           <p>
             <label>Quanto rendeu no último mês?</label>
           </p>
           <p>
-            <input type="text" id="rendimento" />
+            <input type="text" class="form-control" id="rendimento" />
           </p>
           <button class="btn btn-primary" onclick="calcularYieldOnCost()">
             Realizar os cálculos
           </button>
-          <section id="resultadoMes">
+          <button class="btn btn-danger" onclick="limparYieldOnCost()">
+            Limpar
+          </button>
+          <section class="alert alert-primary" role="alert" id="resultadoMes">
             <p>Seu yield on cost foi de ... nesse mês.</p>
           </section>
-          <section id="resultadoAno">
+          <section class="alert alert-primary" role="alert" id="resultadoAno">
             <p>A rentabilidade anualizada seria de ...</p>
           </section>
         </div>
@@ -72,5 +92,6 @@
 
     <script src="assets/js/calculardarfparafiis.js"></script>
     <script src="assets/js/yieldoncost.js"></script>
+    <script src="assets/js/limpar.js"></script>
   </body>
 </html>

@@ -1,9 +1,9 @@
 const calcularYieldOnCost = () => {
-  let precoAquisicao = document
+  const precoAquisicao = document
     .getElementById("precoAquisicao")
     .value.replace(/,/g, ".");
   precoAquisicao * 100;
-  let rendimento = document
+  const rendimento = document
     .getElementById("rendimento")
     .value.replace(/,/g, ".");
   rendimento * 12;
