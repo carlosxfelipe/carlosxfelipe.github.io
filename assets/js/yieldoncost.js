@@ -16,7 +16,9 @@ const calcularYieldOnCost = () => {
   resultadoMes.innerHTML = `<p>Seu yield on cost foi de ${yieldOnCost.toFixed(
     3
   )}% nesse mês.</p>`;
+  resultadoMes.className = `alert alert-warning`;
   resultadoAno.innerHTML = `<p>A rentabilidade anualizada seria de ${(
     yieldOnCost * 12
   ).toFixed(3)}%.</p>`;
+  resultadoAno.className = "alert alert-warning";
 };

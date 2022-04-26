@@ -4,6 +4,10 @@
   font-family: "Ubuntu", sans-serif;
 }
 
+.navbar-brand {
+  margin-left: 10px;
+}
+
 .container {
   margin-top: 10px;
 }
