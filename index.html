@@ -5,18 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fundos Imobiliários</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   </head>
   <body>
     <nav class="navbar navbar-dark bg-primary">
       <a class="navbar-brand" href="index.html">
-        <!-- <img
-          src="/docs/4.1/assets/brand/bootstrap-solid.svg"
-          width="30"
-          height="30"
-          class="d-inline-block align-top"
-          alt=""
-        /> -->
+        <i class="bi bi-building"></i>
         Fundos Imobiliários
       </a>
     </nav>
@@ -50,7 +48,9 @@
           <button class="btn btn-primary" onclick="calcularDarf()">
             Realizar os cálculos
           </button>
-          <button class="btn btn-danger" onclick="limparDarf()">Limpar</button>
+          <button class="btn btn-danger separator" onclick="limparDarf()">
+            Limpar
+          </button>
           <section class="alert alert-primary" role="alert" id="resultadoVenda">
             <p>Seu lucro líquido na operação foi de ...</p>
           </section>
@@ -75,7 +75,10 @@
           <button class="btn btn-primary" onclick="calcularYieldOnCost()">
             Realizar os cálculos
           </button>
-          <button class="btn btn-danger" onclick="limparYieldOnCost()">
+          <button
+            class="btn btn-danger separator"
+            onclick="limparYieldOnCost()"
+          >
             Limpar
           </button>
           <section class="alert alert-primary" role="alert" id="resultadoMes">
@@ -95,6 +98,8 @@
               href="https://linkedin.com/in/carlosxfelipe"
             >
               <code>@carlosxfelipe</code>
+              <i class="bi text-danger bi-heart-fill"></i>
+              <i class="bi text-warning bi-filetype-js"></i>
             </a>
           </p>
         </footer>
