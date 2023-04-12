@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    />
+    <title>Entregável #2</title>
+  </head>
+
+  <body style="font-family: 'Fira Code', monospace">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">ADS UNIFOR</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./../index.html">Página inicial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Fibonacci</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./quicksort.html">Quicksort</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./somatorio.html">Somatório</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contagem.html">Contagem</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./mdc.html">MDC</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./primo.html">Primo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <h1>Fibonacci</h1>
+
+      <p class="text-muted">
+        Na matemática, a sucessão de Fibonacci (ou sequência de Fibonacci), é
+        uma sequência de números inteiros, começando normalmente por 0 e 1, na
+        qual cada termo subsequente corresponde à soma dos dois anteriores.
+      </p>
+
+      <p>
+        O cache da função Fibonacci é uma técnica que armazena os valores de
+        Fibonacci já calculados em um objeto, para que possam ser reutilizados
+        em chamadas subsequentes da função. Isso reduz o número de chamadas
+        recursivas necessárias e melhora o desempenho da função Fibonacci.
+      </p>
+
+      <p>
+        O cache funciona armazenando os valores já calculados em um objeto de
+        cache, que é passado como um parâmetro opcional na função. A cada
+        chamada da função, é verificado se o valor para o número Fibonacci já
+        foi calculado e armazenado no cache. Se sim, o valor armazenado no cache
+        é retornado. Se não, o valor é calculado normalmente e armazenado no
+        cache para uso futuro.
+      </p>
+
+      <pre>
+        <code class="text-primary">
+          const fibonacci = (n, cache = {}) => {
+            if (n <= 1) {
+              return n;
+            }
+            if (n in cache) {
+              return cache[n];
+            }
+            cache[n] = fibonacci(n - 1, cache) + fibonacci(n - 2, cache);
+            return cache[n];
+          };
+          
+          const calculateFibonacci = () => {
+            const numTerms = parseInt(document.getElementById("num_terms").value);
+            let fibonacciSequence = [];
+            for (let i = 0; i < numTerms + 1; i++) {
+              fibonacciSequence.push(fibonacci(i));
+            }
+            const fibonacciList = document.getElementById("fibonacci_sequence");
+            fibonacciList.innerHTML = "";
+            for (let i = 0; i < fibonacciSequence.length; i++) {
+              const listItem = document.createElement("li");
+              listItem.textContent = `Termo ${i}: ${fibonacciSequence[i]}`;
+              fibonacciList.appendChild(listItem);
+            }
+          };          
+        </code>
+      </pre>
+
+      <form>
+        <label for="num_terms">Número de termos:</label>
+        <input type="number" id="num_terms" name="num_terms" min="1" required />
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="calculateFibonacci()"
+        >
+          Calcular
+        </button>
+      </form>
+
+      <ul id="fibonacci_sequence"></ul>
+
+      <script src="../js/fibonacci.js"></script>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
