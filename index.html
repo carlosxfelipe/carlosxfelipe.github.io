@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculum Vitae</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Fira Code", monospace;
+        background-color: #fefefe;
+        color: #000000;
+      }
+      .section-title {
+        color: #007aff;
+      }
+      .experience-period {
+        color: #8e8e93;
+      }
+      .contact-info i {
+        margin-right: 10px;
+      }
+      a {
+        color: #007aff;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+        color: #007aff;
+      }
+      p,
+      .justified {
+        text-align: justify;
+      }
+      .contact-info {
+        text-align: left;
+      }
+      .highlight-text {
+        color: #000000;
+      }
+      .footer-space {
+        padding-bottom: 50px;
+      }
+
+      /* Estilos do botão flutuante de impressão */
+      .fab-print {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        background-color: #007aff;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .fab-print:hover {
+        background-color: #005bb5;
+      }
+      .fab-print:focus,
+      .fab-print:active {
+        outline: none;
+        box-shadow: none;
+      }
+
+      /* Modo escuro */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #121212;
+          color: #e0e0e0;
+        }
+        .section-title {
+          color: #82b1ff;
+        }
+        .experience-period {
+          color: #b0bec5;
+        }
+        .contact-info i {
+          color: #e0e0e0;
+        }
+        a {
+          color: #82b1ff;
+        }
+        .highlight-text {
+          color: #ffffff;
+        }
+      }
+
+      /* Ao imprimir, força o tema light e esconde o botão */
+      @media print {
+        body {
+          background-color: #fefefe !important;
+          color: #000000 !important;
+        }
+        .fab-print {
+          display: none;
+        }
+        a {
+          text-decoration: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="container mt-5 footer-space">
+      <div class="text-center">
+        <h1>{{ name }}</h1>
+        <h2>{{ title }}</h2>
+        <p class="contact-info d-flex flex-column align-items-start">
+          <span>
+            <i class="fas fa-envelope"></i>
+            <a :href="'mailto:' + email">{{ email }}</a>
+          </span>
+          <span>
+            <i class="fab fa-github"></i>
+            <a :href="github" target="_blank">{{ githubDisplay }}</a>
+          </span>
+          <span>
+            <i class="fab fa-linkedin"></i>
+            <a :href="linkedin" target="_blank">{{ linkedinDisplay }}</a>
+          </span>
+          <span> <i class="fas fa-map-marker-alt"></i> {{ location }} </span>
+          <span>
+            <i class="fab fa-whatsapp"></i>
+            <a :href="'https://wa.me/5585999502195'" target="_blank"
+              >{{ phone }}</a
+            >
+          </span>
+        </p>
+      </div>
+      <div class="mt-4">
+        <h3 class="section-title">Resumo do Perfil</h3>
+        <p class="justified">{{ computedProfileSummary }}</p>
+      </div>
+      <div class="mt-4">
+        <h3 class="section-title">Hard-skills</h3>
+        <ul>
+          <li v-for="skill in hardSkills" :key="skill">{{ skill }}</li>
+        </ul>
+      </div>
+      <div class="mt-4">
+        <h3 class="section-title">Soft-skills</h3>
+        <ul>
+          <li v-for="skill in softSkills" :key="skill">{{ skill }}</li>
+        </ul>
+      </div>
+      <div class="mt-4">
+        <h3 class="section-title">Experiências Relevantes</h3>
+        <div
+          v-for="experience in experiences"
+          :key="experience.company"
+          class="mb-3"
+        >
+          <h4 class="highlight-text">
+            {{ experience.role }} - {{ experience.company }}
+          </h4>
+          <small class="experience-period">
+            <i class="fas fa-calendar-alt"></i> {{ experience.period }}
+          </small>
+          <p v-for="task in experience.tasks" :key="task" class="justified">
+            {{ task }}
+          </p>
+        </div>
+      </div>
+      <div class="mt-4">
+        <h3 class="section-title">Educação</h3>
+        <ul>
+          <li v-for="edu in education" :key="edu.institution">
+            <small class="experience-period">
+              <i class="fas fa-calendar-alt"></i> {{ edu.period }}
+            </small>
+            <p>{{ edu.degree }} - {{ edu.institution }}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="mt-4">
+        <h3 class="section-title">Idiomas</h3>
+        <ul>
+          <li v-for="language in languages" :key="language.name">
+            {{ language.name }} - {{ language.proficiency }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button
+      class="fab-print d-print-none"
+      title="Imprimir"
+      onclick="window.print()"
+    >
+      <i class="fas fa-print"></i>
+    </button>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          name: "CARLOS FELIPE ARAUJO",
+          title: "MOBILE E FRONT-END DEVELOPER",
+          email: "carlosxfelipe@gmail.com",
+          github: "https://github.com/carlosxfelipe",
+          githubDisplay: "github.com/carlosxfelipe",
+          linkedin: "https://www.linkedin.com/in/carlosxfelipe/",
+          linkedinDisplay: "linkedin.com/in/carlosxfelipe/",
+          location: "Fortaleza, Ceará, Brasil",
+          phone: "(85) 99950-2195",
+          hardSkills: [
+            "JavaScript / TypeScript (Pleno)",
+            "React / React Native (Pleno)",
+            "Dart / Flutter (Júnior)",
+          ],
+          softSkills: [
+            "Lifelong learning",
+            "Vontade de aprender",
+            "Espírito de colaboração",
+            "Proatividade",
+            "Autonomia",
+            "Comunicação",
+          ],
+          experiences: [
+            {
+              role: "Front-end developer",
+              company: "Solar Coca-Cola",
+              period: "Jun 2024 - atualmente",
+              tasks: ["Desenvolvimento Front-end (React) do portal SOLAR+WEB."],
+            },
+            {
+              role: "Mobile developer",
+              company: "SUNO (Status Invest)",
+              period: "Set 2022 - Abr 2024",
+              tasks: [
+                "O Status Invest é uma plataforma online, do grupo Suno, que disponibiliza ferramentas para ajudar o investidor a fazer suas próprias análises de ativos como ações, fundos imobiliários etc.",
+                "Desenvolvimento do aplicativo (iOS e Android) da plataforma Status Invest, usando React Native, sendo responsável em montar todas as telas dos ativos, criar componentes, implementar gráficos etc.",
+              ],
+            },
+            {
+              role: "Professor de espanhol",
+              company: "SESC",
+              period: "Ago 2011 - Jan 2020",
+              tasks: [
+                "O Serviço Social do Comércio (Sesc) é uma instituição de caráter privado e sem fins lucrativos, mantida por empresários do comércio de bens, serviços e turismo e administrada pela Fecomércio (Federação do Comércio de Bens, Serviços e Turismo do Estado do Ceará).",
+                "Atuação em curso de idiomas nas unidades do Sesc e dentro das empresas parceiras.",
+              ],
+            },
+          ],
+          education: [
+            {
+              degree: "Análise e Desenvolvimento de Sistemas",
+              institution: "UNIFOR",
+              period: "2022.2 - atualmente (em andamento)",
+            },
+            {
+              degree: "Direito",
+              institution: "UNI7",
+              period: "2012-2017 (concluído)",
+            },
+            {
+              degree: "Letras Português-Espanhol",
+              institution: "UFC",
+              period: "2006-2010 (concluído)",
+            },
+          ],
+          languages: [
+            { name: "Português", proficiency: "nativo" },
+            { name: "Espanhol", proficiency: "fluente (C2)" },
+            { name: "Inglês", proficiency: "intermediário (B1)" },
+          ],
+        },
+        computed: {
+          age() {
+            const today = new Date();
+            const birthDate = new Date(1987, 9, 3);
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            if (
+              monthDiff < 0 ||
+              (monthDiff === 0 && today.getDate() < birthDate.getDate())
+            ) {
+              age--;
+            }
+            return age;
+          },
+          experienceDuration() {
+            const today = new Date();
+            const startDate = new Date(2022, 8, 1);
+            let years = today.getFullYear() - startDate.getFullYear();
+            let months = today.getMonth() - startDate.getMonth();
+            if (today.getDate() < startDate.getDate()) {
+              months--;
+            }
+            if (months < 0) {
+              years--;
+              months += 12;
+            }
+            const yearsStr =
+              years > 0 ? years + (years === 1 ? " ano" : " anos") : "";
+            const monthsStr =
+              months > 0 ? months + (months === 1 ? " mês" : " meses") : "";
+            if (years && months) {
+              return yearsStr + " e " + monthsStr;
+            } else if (years) {
+              return yearsStr;
+            } else if (months) {
+              return monthsStr;
+            } else {
+              return "menos de 1 mês";
+            }
+          },
+          computedProfileSummary() {
+            return `Sou pessoa com deficiência (PCD), diagnosticado tardiamente para Transtorno do Espectro Autista (CID-11 6A02.0) com altas habilidades. Fui professor de espanhol por vários anos e, após uma mudança de carreira para a área de desenvolvimento de software, me envolvi nos últimos ${this.experienceDuration} em projetos Front-End e Mobile. Atualmente tenho ${this.age} anos, sou casado e tenho um filho.`;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
