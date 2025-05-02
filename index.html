@@ -161,9 +161,27 @@
       </div>
       <div class="mt-4">
         <h3 class="section-title">Hard-skills</h3>
-        <ul>
-          <li v-for="skill in hardSkills" :key="skill">{{ skill }}</li>
-        </ul>
+        <div
+          v-for="skill in hardSkills"
+          :key="skill.name"
+          class="d-flex align-items-center mb-2"
+        >
+          <div class="w-50 pr-2">{{ skill.name }}</div>
+          <div class="w-50">
+            <div class="progress" style="height: 20px">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                :style="{ width: skill.level + '%' }"
+                :aria-valuenow="skill.level"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                {{ skill.level }}%
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="mt-4">
         <h3 class="section-title">Soft-skills</h3>
@@ -230,14 +248,22 @@
           location: "Fortaleza, Ceará, Brasil",
           phone: "(85) 99950-2195",
           hardSkills: [
-            "React Native – desenvolvimento de aplicativos móveis",
-            "Flutter – desenvolvimento de aplicativos móveis",
-            "React – desenvolvimento web",
-            "SolidJS – desenvolvimento web",
-            "Astro – desenvolvimento web (SSG e SSR)",
-            "FastAPI – framework para desenvolvimento backend",
+            {
+              name: "React Native – desenvolvimento de aplicativos móveis",
+              level: 100,
+            },
+            {
+              name: "Flutter – desenvolvimento de aplicativos móveis",
+              level: 80,
+            },
+            { name: "React – desenvolvimento web", level: 100 },
+            { name: "SolidJS – desenvolvimento web", level: 90 },
+            { name: "Astro – desenvolvimento web (SSG e SSR)", level: 80 },
+            {
+              name: "FastAPI – framework para desenvolvimento backend",
+              level: 60,
+            },
           ],
-
           softSkills: [
             "Lifelong learning",
             "Vontade de aprender",
