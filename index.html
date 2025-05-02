@@ -126,6 +126,32 @@
         font-size: 1.25rem;
         font-weight: normal;
       }
+
+      .progress-bar {
+        background-color: #d1d5db;
+        color: #000;
+      }
+
+      .skill-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 576px) {
+        .skill-row {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0.25rem;
+          margin-bottom: 0.75rem;
+        }
+
+        .skill-row > div {
+          width: 100% !important;
+          padding-right: 0 !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -164,7 +190,7 @@
         <div
           v-for="skill in hardSkills"
           :key="skill.name"
-          class="d-flex align-items-center mb-2"
+          class="skill-row mb-3"
         >
           <div class="w-50 pr-2">{{ skill.name }}</div>
           <div class="w-50">
