@@ -170,17 +170,19 @@
         <p class="justified">{{ computedProfileSummary }}</p>
       </div>
       <div class="mt-4">
-        <h3 class="section-title">Hard-skills</h3>
+        <h3 class="section-title">Linguagens de Programação</h3>
         <ul>
-          <li v-for="skill in hardSkills" :key="skill.name">
-            {{ skill.name }}
+          <li v-for="lang in programmingLanguages" :key="lang">
+            {{ lang }}
           </li>
         </ul>
       </div>
       <div class="mt-4">
-        <h3 class="section-title">Soft-skills</h3>
+        <h3 class="section-title">Libs e Frameworks</h3>
         <ul>
-          <li v-for="skill in softSkills" :key="skill">{{ skill }}</li>
+          <li v-for="skill in libsFrameworks" :key="skill.name">
+            {{ skill.name }}
+          </li>
         </ul>
       </div>
       <div class="mt-4">
@@ -233,7 +235,7 @@
         el: "#app",
         data: {
           name: "CARLOS FELIPE ARAUJO",
-          title: "MOBILE E FRONT-END DEVELOPER",
+          title: "MOBILE DEVELOPER",
           email: "carlosxfelipe@gmail.com",
           github: "https://github.com/carlosxfelipe",
           githubDisplay: "github.com/carlosxfelipe",
@@ -241,7 +243,7 @@
           linkedinDisplay: "linkedin.com/in/carlosxfelipe/",
           location: "Fortaleza, Ceará, Brasil",
           phone: "(85) 99950-2195",
-          hardSkills: [
+          libsFrameworks: [
             {
               name: "React Native – desenvolvimento de aplicativos móveis",
             },
@@ -255,14 +257,13 @@
             },
             {name: "FastAPI - backend framework"}
           ],
-          softSkills: [
-            "Lifelong learning",
-            "Vontade de aprender",
-            "Espírito de colaboração",
-            "Proatividade",
-            "Autonomia",
-            "Comunicação",
-          ],
+          programmingLanguages: [
+              "JavaScript (JS)",
+              "TypeScript (TS)",
+              "Dart",
+              "Python",
+              "Swift"
+            ],
           experiences: [
             {
               role: "Mobile developer",
