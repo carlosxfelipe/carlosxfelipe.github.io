@@ -2,7 +2,7 @@ new Vue({
   el: "#app",
   data: {
     name: "CARLOS FELIPE ARAUJO",
-    title: "MOBILE DEVELOPER",
+    title: "SENIOR MOBILE DEVELOPER",
     email: "carlosxfelipe@gmail.com",
     github: "https://github.com/carlosxfelipe",
     githubDisplay: "github.com/carlosxfelipe",
@@ -12,17 +12,21 @@ new Vue({
     phone: "(85) 99950-2195",
     libsFrameworks: [
       {
-        name: "React Native – desenvolvimento de aplicativos móveis",
+        name: "React Native – desenvolvimento mobile",
       },
       {
-        name: "Flutter – desenvolvimento de aplicativos móveis",
+        name: "Flutter – desenvolvimento mobile",
+      },
+      {
+        name: "SwiftUI – desenvolvimento mobile (estudando)",
       },
       { name: "React – desenvolvimento web" },
       { name: "Astro – desenvolvimento web (SSG e SSR)" },
       {
-        name: "Django - full stack framework",
+        name: "Django Ninja – desenvolvimento backend",
       },
-      { name: "FastAPI - backend framework" },
+      { name: "FastAPI – desenvolvimento backend" },
+      { name: "Nest – desenvolvimento backend (estudando)" },
     ],
     programmingLanguages: [
       "JavaScript (JS)",
@@ -33,20 +37,18 @@ new Vue({
     ],
     experiences: [
       {
-        role: "Mobile developer",
+        role: "Senior Mobile Developer",
         company: "Solar Coca-Cola",
         period: "Jun 2024 - atualmente",
         tasks: [
-          "Responsável por criar o Design System utilizando Storybook e atualmente atuando no projeto mobile do SFA.",
+          "Iniciei no desenvolvimento web com React (Vite), migrando posteriormente para o desenvolvimento mobile com React Native.",
         ],
       },
       {
         role: "Mobile developer",
         company: "SUNO (Status Invest)",
         period: "Set 2022 - Abr 2024",
-        tasks: [
-          "Corresponsável em montar telas dos ativos, criar componentes, implementar gráficos etc.",
-        ],
+        tasks: ["Iniciei no desenvolvimento mobile com React Native."],
       },
       {
         role: "Professor de espanhol",
