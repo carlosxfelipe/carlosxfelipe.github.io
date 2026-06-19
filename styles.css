@@ -1,0 +1,112 @@
+body {
+  font-family: "Fira Code", monospace;
+  background-color: #fefefe;
+  color: #000000;
+}
+.section-title {
+  color: #007aff;
+}
+.experience-period {
+  color: #8e8e93;
+}
+.contact-info i {
+  margin-right: 10px;
+}
+a {
+  color: #007aff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  color: #007aff;
+}
+p,
+.justified {
+  text-align: justify;
+}
+.contact-info {
+  text-align: left;
+}
+.highlight-text {
+  color: #000000;
+}
+.footer-space {
+  padding-bottom: 50px;
+}
+
+/* Estilos do botão flutuante de impressão */
+.fab-print {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fab-print:hover {
+  background-color: #005bb5;
+}
+.fab-print:focus,
+.fab-print:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Modo escuro */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  .section-title {
+    color: #82b1ff;
+  }
+  .experience-period {
+    color: #b0bec5;
+  }
+  .contact-info i {
+    color: #e0e0e0;
+  }
+  a {
+    color: #82b1ff;
+  }
+  .highlight-text {
+    color: #ffffff;
+  }
+}
+
+/* Ao imprimir, força o tema light e esconde o botão */
+@media print {
+  body {
+    background-color: #fefefe !important;
+    color: #000000 !important;
+  }
+  .fab-print {
+    display: none;
+  }
+  a {
+    text-decoration: none !important;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+body {
+  font-family: "Ubuntu", Arial, sans-serif;
+}
