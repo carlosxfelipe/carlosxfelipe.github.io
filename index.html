@@ -127,6 +127,16 @@
         font-weight: normal;
       }
     </style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Ubuntu', Arial, sans-serif;
+      }
+    </style>
   </head>
   <body>
     <div id="app" class="container mt-5 footer-space">
@@ -160,17 +170,19 @@
         <p class="justified">{{ computedProfileSummary }}</p>
       </div>
       <div class="mt-4">
-        <h3 class="section-title">Hard-skills</h3>
+        <h3 class="section-title">Linguagens de Programação</h3>
         <ul>
-          <li v-for="skill in hardSkills" :key="skill.name">
-            {{ skill.name }}
+          <li v-for="lang in programmingLanguages" :key="lang">
+            {{ lang }}
           </li>
         </ul>
       </div>
       <div class="mt-4">
-        <h3 class="section-title">Soft-skills</h3>
+        <h3 class="section-title">Libs e Frameworks</h3>
         <ul>
-          <li v-for="skill in softSkills" :key="skill">{{ skill }}</li>
+          <li v-for="skill in libsFrameworks" :key="skill.name">
+            {{ skill.name }}
+          </li>
         </ul>
       </div>
       <div class="mt-4">
@@ -223,7 +235,7 @@
         el: "#app",
         data: {
           name: "CARLOS FELIPE ARAUJO",
-          title: "MOBILE E FRONT-END DEVELOPER",
+          title: "MOBILE DEVELOPER",
           email: "carlosxfelipe@gmail.com",
           github: "https://github.com/carlosxfelipe",
           githubDisplay: "github.com/carlosxfelipe",
@@ -231,7 +243,7 @@
           linkedinDisplay: "linkedin.com/in/carlosxfelipe/",
           location: "Fortaleza, Ceará, Brasil",
           phone: "(85) 99950-2195",
-          hardSkills: [
+          libsFrameworks: [
             {
               name: "React Native – desenvolvimento de aplicativos móveis",
             },
@@ -241,24 +253,24 @@
             { name: "React – desenvolvimento web" },
             { name: "Astro – desenvolvimento web (SSG e SSR)" },
             {
-              name: "ElysiaJS – framework para desenvolvimento backend",
+              name: "Django - full stack framework",
             },
+            {name: "FastAPI - backend framework"}
           ],
-          softSkills: [
-            "Lifelong learning",
-            "Vontade de aprender",
-            "Espírito de colaboração",
-            "Proatividade",
-            "Autonomia",
-            "Comunicação",
-          ],
+          programmingLanguages: [
+              "JavaScript (JS)",
+              "TypeScript (TS)",
+              "Dart",
+              "Python",
+              "Swift"
+            ],
           experiences: [
             {
-              role: "Front-end e Mobile developer",
+              role: "Mobile developer",
               company: "Solar Coca-Cola",
               period: "Jun 2024 - atualmente",
               tasks: [
-                "Iniciei como desenvolvedor web e, após contribuir em um projeto, passei a desenvolver a biblioteca de componentes para os aplicativos mobile.",
+                "Responsável por criar o Design System utilizando Storybook e atualmente atuando no projeto mobile do SFA.",
               ],
             },
             {
@@ -266,8 +278,7 @@
               company: "SUNO (Status Invest)",
               period: "Set 2022 - Abr 2024",
               tasks: [
-                "O Status Invest é uma plataforma online, do grupo Suno, que disponibiliza ferramentas para ajudar o investidor a fazer suas próprias análises de ativos como ações, fundos imobiliários etc.",
-                "Desenvolvimento do aplicativo (iOS e Android) da plataforma Status Invest, usando React Native, sendo responsável em montar todas as telas dos ativos, criar componentes, implementar gráficos etc.",
+                "Corresponsável em montar telas dos ativos, criar componentes, implementar gráficos etc.",
               ],
             },
             {
@@ -275,7 +286,6 @@
               company: "SESC",
               period: "Ago 2011 - Jan 2020",
               tasks: [
-                "O Serviço Social do Comércio (Sesc) é uma instituição de caráter privado e sem fins lucrativos, mantida por empresários do comércio de bens, serviços e turismo e administrada pela Fecomércio (Federação do Comércio de Bens, Serviços e Turismo do Estado do Ceará).",
                 "Atuação em curso de idiomas nas unidades do Sesc e dentro das empresas parceiras.",
               ],
             },
